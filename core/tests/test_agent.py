@@ -100,7 +100,7 @@ class ScriptedModel:
 
 def make(responses, safety="confirm_risky", tool_mode="auto", **env_kw):
     s = Settings(Path(os.environ["ATHENA_HOME"]) / f"s{id(responses)}.json")
-    s.update({"model": {"providers": {"lmstudio": {"model": "qwen2.5-vl-7b"}}, "tool_mode": tool_mode},
+    s.update({"model": {"active_provider": "lmstudio", "providers": {"lmstudio": {"model": "qwen2.5-vl-7b"}}, "tool_mode": tool_mode},
               "control": {"safety_mode": safety, "settle_ms": 0, "mouse_speed": "instant"}})
     model = ScriptedModel(responses)
     llm = LLMClient(s)

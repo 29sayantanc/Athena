@@ -43,9 +43,9 @@ for _d in (SESSIONS_DIR, LOGS_DIR):
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 PROVIDER_PRESETS = {
+    "venice": {"name": "Venice (recommended)", "base_url": "https://api.venice.ai/api/v1", "needs_key": True},
     "lmstudio": {"name": "LM Studio", "base_url": "http://localhost:1234/v1", "needs_key": False},
     "ollama": {"name": "Ollama", "base_url": "http://localhost:11434/v1", "needs_key": False},
-    "venice": {"name": "Venice", "base_url": "https://api.venice.ai/api/v1", "needs_key": True},
     "openrouter": {"name": "OpenRouter", "base_url": "https://openrouter.ai/api/v1", "needs_key": True},
     "custom": {"name": "Custom (OpenAI-compatible)", "base_url": "http://localhost:8080/v1", "needs_key": False},
 }
@@ -89,11 +89,11 @@ DEFAULTS: dict[str, Any] = {
         "allow_control": True,            # master switch for mouse/keyboard
     },
     "model": {
-        "active_provider": "lmstudio",
+        "active_provider": "venice",      # fast, private cloud models; LM Studio/Ollama for fully local
         "providers": {
             "lmstudio": {"base_url": "http://localhost:1234/v1", "api_key": "", "model": ""},
             "ollama": {"base_url": "http://localhost:11434/v1", "api_key": "", "model": ""},
-            "venice": {"base_url": "https://api.venice.ai/api/v1", "api_key": "", "model": ""},
+            "venice": {"base_url": "https://api.venice.ai/api/v1", "api_key": "", "model": "z-ai-glm-5-3-flash"},
             "openrouter": {"base_url": "https://openrouter.ai/api/v1", "api_key": "", "model": ""},
             "custom": {"base_url": "http://localhost:8080/v1", "api_key": "", "model": ""},
         },
