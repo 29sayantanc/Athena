@@ -7,7 +7,9 @@ things out, walks you through software you don't know, and can use your mouse an
 done. Speech recognition and the voice run on your own machine; the model runs on a private cloud
 provider ([Venice](https://venice.ai), recommended) or locally.
 
-![Athena guiding through a Photoshop menu](docs/images/overlay.png)
+![Athena answering a question, highlighting the steps, then doing it](docs/images/athena-demo.gif)
+
+<sub>Asking about a photo, getting the steps in a popup, seeing them highlighted, then letting Athena do it. [Full-quality video](docs/athena-demo.mp4).</sub>
 
 ## What she does
 
