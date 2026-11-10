@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'">
+<title>Athena Overlay</title>
+<style>
+  @font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/InstrumentSans.woff2") format("woff2-variations");
+    font-weight: 400 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/InstrumentSans-Italic.woff2") format("woff2-variations");
+    font-weight: 400 700; font-style: italic; font-display: block; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; user-select: none;
+    font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; }
+  #caption { position: fixed; left: 0; top: 0; max-width: 340px; padding: 7px 11px 8px; border-radius: 8px;
+    background: rgba(23, 25, 28, .94); color: #ECEAE4; font-size: 13px; line-height: 1.45; letter-spacing: .005em;
+    box-shadow: 0 0 0 1px rgba(236, 234, 228, .08), 0 6px 18px rgba(0, 0, 0, .28);
+    opacity: 0; transform: translateY(3px); transition: opacity .18s ease, transform .18s ease; pointer-events: none; }
+  #caption.show { opacity: 1; transform: none; }
+  #caption.user { color: #A3A59E; font-style: italic; }
+  #caption.status { color: #A3A59E; font-size: 12.5px; padding: 5px 10px 6px; }
+  #caption.error { box-shadow: 0 0 0 1px rgba(215, 101, 79, .6), 0 6px 18px rgba(0, 0, 0, .28); }
+  #hlclose { position: fixed; inset: 0; pointer-events: none; }
+  .hlx { position: absolute; left: 0; top: 0; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 0 5px 5px 0;
+    background: rgba(23, 25, 28, .94); color: #A3A59E; cursor: pointer; pointer-events: auto;
+    display: grid; place-items: center; transition: opacity .15s, color .12s, background .12s; }
+  .hlx svg { width: 10px; height: 10px; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; fill: none; }
+  .hlx.hot { color: #17191C; background: #E8BE45; }
+  .hlx.solo { border-radius: 5px; }
+  @media (prefers-reduced-motion: reduce) { #caption { transition: none; } }
+</style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="caption"></div>
+  <script src="overlay.js"></script>
+</body>
+</html>

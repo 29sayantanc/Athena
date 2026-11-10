@@ -1,0 +1,26 @@
+# Core inference
+torch>=2.5.0
+transformers>=4.57
+pocket-tts>=2.1.0
+silero-vad>=5.1
+
+# Server
+fastapi>=0.100
+uvicorn[standard]>=0.13
+websockets>=12.0
+python-multipart>=0.0.21
+pydantic>=2
+
+# TUI
+textual>=8.0
+rich>=15.0
+typing-extensions>=4.4
+
+# Audio / numerics (pin numpy<2.3 for numba/librosa compat with parakeet feature extractor)
+numpy<2.3
+soundfile>=0.12.0
+scipy>=1.5.0
+librosa>=0.10
+sentencepiece>=0.2.1
+safetensors>=0.4.0
+huggingface-hub>=0.13.0

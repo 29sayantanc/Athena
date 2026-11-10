@@ -1,0 +1,19 @@
+{
+  "name": "athena",
+  "productName": "Athena",
+  "version": "0.1.0",
+  "description": "Athena — a voice-driven AI companion that lives on your cursor",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "dompurify": "^3.2.0",
+    "marked": "15.0.12",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "electron": "44.8.0"
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'">
+<title>Athena Calibration</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  html, body { height: 100%; overflow: hidden; background: #17191C; color: #ECEAE4; cursor: none; user-select: none; color-scheme: dark; }
+  #msg { position: fixed; left: 0; right: 0; bottom: 56px; text-align: center; }
+  #msg h1 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+  #msg p { margin: 4px 0 0; color: #A3A59E; font-size: 13.5px; }
+  #msg.err h1 { color: #D7654F; }
+  .t { position: absolute; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%;
+    border: 2px solid #ECEAE4; display: grid; place-items: center; font-size: 34px; font-weight: 650; line-height: 1; }
+  .t::before, .t::after { content: ""; position: absolute; background: #E0B54A; }
+  .t::before { width: 2px; height: 12px; left: 43px; top: -14px; box-shadow: 0 104px 0 #E0B54A; }
+  .t::after { height: 2px; width: 12px; top: 43px; left: -14px; box-shadow: 104px 0 0 #E0B54A; }
+  .p { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; }
+  .p::before, .p::after { content: ""; position: absolute; background: #A6B85A; }
+  .p::before { left: 8px; top: 0; width: 2px; height: 18px; } .p::after { top: 8px; left: 0; height: 2px; width: 18px; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+</style>
+</head>
+<body>
+  <svg id="lines"></svg>
+  <div id="targets"></div>
+  <div id="msg"><h1>Calibrating</h1><p>Keep the mouse still.</p></div>
+  <script src="calibrate.js"></script>
+</body>
+</html>

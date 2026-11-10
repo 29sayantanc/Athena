@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https:; font-src 'self'">
+<title>Athena Chat</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="mark" id="mark"></span>
+    <span class="title">Athena</span>
+    <span class="state" id="status"></span>
+    <span class="spacer"></span>
+    <button class="icon" id="history" title="Open conversation" aria-label="Open conversation"><svg viewBox="0 0 16 16"><path d="M3 4h10M3 8h10M3 12h6"/></svg></button>
+    <button class="icon on" id="pin" title="Keep on top" aria-label="Keep on top" aria-pressed="true"><svg viewBox="0 0 16 16"><path d="M5.5 2.5h5M6.5 2.5v4l-2 2.5h7l-2-2.5v-4M8 9v4.5"/></svg></button>
+    <button class="icon" id="close" title="Hide" aria-label="Hide"><svg viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></button>
+  </header>
+  <main id="thread" aria-live="polite">
+    <div class="empty" id="empty">
+      <span class="mark"></span>
+      <p>Press <span class="kbd" id="hk">F8</span> and ask Athena anything.</p>
+    </div>
+    <div id="turn"></div>
+    <div class="working" id="typing" hidden><span class="sweep"></span><span id="typingText">Thinking</span></div>
+  </main>
+  <footer>
+    <div class="composer">
+      <textarea id="input" rows="1" placeholder="Ask a follow-up" aria-label="Ask a follow-up"></textarea>
+      <button class="icon" id="mic"></button>
+      <button class="icon send" id="send" title="Send" aria-label="Send"><svg viewBox="0 0 16 16"><path d="M8 13V3.5M3.75 7.5 8 3.25l4.25 4.25"/></svg></button>
+    </div>
+  </footer>
+  <script src="../node_modules/marked/lib/marked.umd.js"></script>
+  <script src="../node_modules/dompurify/dist/purify.min.js"></script>
+  <script src="chat-view.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

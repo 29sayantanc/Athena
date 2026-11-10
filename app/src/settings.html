@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https:; font-src 'self'">
+<title>Athena</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <aside>
+    <div class="brand"><span class="mark"></span><span>Athena</span></div>
+    <nav id="nav"></nav>
+    <div class="status" id="status"></div>
+  </aside>
+  <main id="content">
+    <div id="page"></div>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="../node_modules/marked/lib/marked.umd.js"></script>
+  <script src="../node_modules/dompurify/dist/purify.min.js"></script>
+  <script src="chat-view.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

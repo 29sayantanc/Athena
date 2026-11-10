@@ -1,0 +1,75 @@
+/* Athena design tokens. Graphite and paper, with olive, bronze and brass used only to signal state. */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../assets/fonts/InstrumentSans.woff2") format("woff2-variations");
+  font-weight: 400 700; font-stretch: 75% 100%; font-style: normal; font-display: block;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../assets/fonts/InstrumentSans-Italic.woff2") format("woff2-variations");
+  font-weight: 400 700; font-stretch: 75% 100%; font-style: italic; font-display: block;
+}
+
+:root {
+  --font: "Instrument Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+
+  /* dark (default) */
+  --bg: #17191C;
+  --surface: #1E2124;
+  --surface-2: #25292D;
+  --line: rgba(236, 234, 228, .08);
+  --line-strong: rgba(236, 234, 228, .14);
+  --text: #ECEAE4;
+  --text-2: #A3A59E;
+  --text-3: #6E716B;
+  --olive: #A6B85A;
+  --olive-ink: #1B1E10;
+  --bronze: #C8894A;
+  --brass: #E0B54A;
+  --silver: #A9BCD0;
+  --danger: #D7654F;
+  --focus: rgba(166, 184, 90, .55);
+
+  --r-s: 6px;
+  --r-m: 9px;
+  --r-l: 14px;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F4F4F1;
+    --surface: #FFFFFF;
+    --surface-2: #ECECE7;
+    --line: rgba(28, 30, 26, .09);
+    --line-strong: rgba(28, 30, 26, .16);
+    --text: #1C1E1A;
+    --text-2: #5E615A;
+    --text-3: #8E918A;
+    --olive: #6E7B2C;
+    --olive-ink: #FFFFFF;
+    --bronze: #9C6230;
+    --brass: #A87A16;
+    --silver: #4D6680;
+    --danger: #B4432F;
+    --focus: rgba(110, 123, 44, .45);
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text);
+  font: 400 14px/1.5 var(--font); font-feature-settings: "tnum" 1, "ss01" 1;
+  -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; color: inherit; letter-spacing: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--olive) 35%, transparent); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* The mark: an aperture ring with a centre point. Colour encodes state. */
+.mark { width: 16px; height: 16px; border-radius: 50%; flex: none; position: relative;
+  border: 1.5px solid var(--text); }
+.mark::after { content: ""; position: absolute; inset: 4.5px; border-radius: 50%; background: var(--mark, var(--olive)); }
+
+.kbd { display: inline-block; min-width: 22px; padding: 0 6px; text-align: center; font-size: 12px; line-height: 20px;
+  border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 5px; background: var(--surface-2); color: var(--text); }
